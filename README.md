@@ -59,34 +59,6 @@ Once connected to a PC, the Arduino is detected as a **keyboard device**.
 This creates a smooth and responsive game control experience.
 
 ---
-🛠 Troubleshooting
-Arduino not detected as keyboard
-
-Ensure Arduino Uno R4 is selected
-
-Do not remove the delay() before Keyboard.begin()
-
-Joystick moves without touching
-
-Increase dead-zone values (LOW_TH, HIGH_TH)
-
-Buttons trigger randomly
-
-Check wiring
-
-Ensure INPUT_PULLUP is used
-
-Keys remain pressed
-
-Ensure Keyboard.releaseAll() is called
-
-Avoid long delays
-
-Game not responding
-
-Map game controls to keyboard keys
-
-Ensure game supports keyboard input
 
 🎯 Applications
 
