@@ -1,0 +1,54 @@
+#include <Keyboard.h>
+
+// Joystick pins
+const int joyX = A0;
+const int joyY = A1;
+
+// Button pins
+const int buttonPins[4] = {2, 3, 4, 5};
+
+// Dead zone
+const int LOW_TH = 350;
+const int HIGH_TH = 670;
+
+// Button key mapping
+const char buttonKeys[4] = {'w', 'a', 's', 'd'}; 
+
+void setup() {
+  // Buttons
+  for (int i = 0; i < 4; i++) {
+    pinMode(buttonPins[i], INPUT_PULLUP);
+  }
+
+  delay(3000);        // USB enumeration delay (VERY IMPORTANT)
+  Keyboard.begin();
+}
+
+void loop() {
+  // -------- JOYSTICK --------
+  int x = analogRead(joyX);
+  int y = analogRead(joyY);
+
+  if (x < LOW_TH) Keyboard.press(KEY_LEFT_ARROW);
+  else Keyboard.release(KEY_LEFT_ARROW);
+
+  if (x > HIGH_TH) Keyboard.press(KEY_RIGHT_ARROW);
+  else Keyboard.release(KEY_RIGHT_ARROW);
+
+  if (y < LOW_TH) Keyboard.press(KEY_UP_ARROW);
+  else Keyboard.release(KEY_UP_ARROW);
+
+  if (y > HIGH_TH) Keyboard.press(KEY_DOWN_ARROW);
+  else Keyboard.release(KEY_DOWN_ARROW);
+
+  // -------- BUTTONS --------
+  for (int i = 0; i < 4; i++) {
+    if (digitalRead(buttonPins[i]) == LOW) {
+      Keyboard.press(buttonKeys[i]);
+    } else {
+      Keyboard.release(buttonKeys[i]);
+    }
+  }
+
+  delay(10);
+} 
