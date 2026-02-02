@@ -60,7 +60,7 @@ This creates a smooth and responsive game control experience.
 
 ---
 
-🎯 Applications
+  🎯 Applications
 
 PC games with keyboard support
 
@@ -70,11 +70,11 @@ HID device learning
 
 Electronics and Arduino practice
 
-📌 Conclusion
+   📌 Conclusion
 
 This project demonstrates how simple hardware inputs can be converted into digital commands using USB HID communication. It’s a compact, efficient, and educational project that blends nostalgia, electronics, and real-time control systems.
 
-❓ FAQ
+   ❓ FAQ
 
 Q1. Can I use this with any PC game?
 Yes, as long as the game supports keyboard controls.
@@ -83,7 +83,7 @@ Q2. Why the startup delay?
 It ensures proper USB keyboard detection.
 
 Q3. Can I change button keys?
-Absolutely — just modify the key mappings in code.
+Absolutely just modify the key mappings in code.
 
 Q4. Is this beginner friendly?
 Yes! Perfect for Arduino and HID beginners.
